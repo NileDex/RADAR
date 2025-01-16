@@ -1,0 +1,28 @@
+src/components/Dashboard/Dashboard.css
+.dashboard {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto; /* Allows scrolling for the entire dashboard */
+}
+
+.main-container {
+ 
+  display: flex;
+  flex: 1;
+  overflow-y: none; /* Optional: this allows scrolling for main content if necessary */
+}
+
+.content {
+  padding: 5px;
+  overflow-y: auto; /* Allows scrolling for the entire dashboard */
+  flex: 1;
+}
+
+@media (max-width: 768px) {
+  .main-container {
+      position: relative;
+  }
+}
+
+

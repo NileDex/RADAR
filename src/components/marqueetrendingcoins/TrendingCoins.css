@@ -1,0 +1,134 @@
+/* Container for the trending coins marquee */
+/* Marquee wrapper */
+.marquee {
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+  }
+  
+  /* Marquee content that scrolls */
+  .marquee-content {
+    display: flex;
+    gap: 40px; /* Space between coin items */
+    animation: marquee 30s linear infinite; /* Slower scrolling speed (increased duration to 30s) */
+  }
+  
+  /* Individual coin item in a straight line */
+  .coin-item {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Space between elements in each coin item */
+  }
+  
+  /* Coin icon styling */
+  .coin-icon {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+  }
+  
+  /* Coin name and symbol */
+  .coin-name {
+    font-weight: bold;
+    font-size: 1rem;
+  }
+  
+  .coin-symbol {
+    color: #aaa;
+    font-size: 0.9rem;
+  }
+  
+  /* Coin price */
+  .coin-price {
+    font-size: 1rem;
+  }
+  
+  /* Pumping (green) and Dipping (red) styling */
+  .coin-change {
+    font-weight: bold;
+    font-size: 0.9rem;
+  }
+  
+  .pumping {
+    color: #4caf50; /* Green */
+  }
+  
+  .dipping {
+    color: #f44336; /* Red */
+  }
+  
+  /* Marquee animation */
+  @keyframes marquee {
+    0% {
+      transform: translateX(100%); /* Start from the right */
+    }
+    100% {
+      transform: translateX(-100%); /* End at the left */
+    }
+  }
+  
+  /* Mobile and smaller screen adjustments */
+  @media (max-width: 768px) {
+    /* Marquee content */
+    .marquee-content {
+      gap: 20px; /* Less space between items */
+    }
+  
+    /* Coin item elements */
+    .coin-item {
+      gap: 10px; /* Less space between elements */
+    }
+  
+    .coin-name {
+      font-size: 0.9rem; /* Slightly smaller text */
+    }
+  
+    .coin-symbol {
+      font-size: 0.8rem; /* Adjust symbol size */
+    }
+  
+    .coin-price {
+      font-size: 0.9rem; /* Adjust price size */
+    }
+  
+    .coin-change {
+      font-size: 0.8rem; /* Adjust change size */
+    }
+  
+    /* Coin icon */
+    .coin-icon {
+      width: 15px;
+      height: 15px; /* Smaller coin icons */
+    }
+  }
+  
+  /* For extra small devices, like mobile phones */
+  @media (max-width: 480px) {
+    /* Marquee wrapper */
+    .marquee {
+      animation: marquee 40s linear infinite; /* Even slower animation on smaller screens */
+    }
+  
+    .coin-name {
+      font-size: 0.8rem; /* Further reduce name size */
+    }
+  
+    .coin-symbol {
+      font-size: 0.7rem; /* Reduce symbol size further */
+    }
+  
+    .coin-price {
+      font-size: 0.8rem; /* Smaller price */
+    }
+  
+    .coin-change {
+      font-size: 0.7rem; /* Smaller change percentage */
+    }
+  
+    .coin-item {
+      gap: 5px; /* Even less space between elements */
+    }
+  }
+  

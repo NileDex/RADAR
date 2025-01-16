@@ -1,0 +1,87 @@
+/* Skeleton styles */
+.skeleton {
+    background: linear-gradient(-90deg, #e0e0e0 25%, #f0f0f0 50%, #e0e0e0 75%);
+    background-size: 200% 100%;
+    animation: skeleton-loading 1.5s infinite;
+    border-radius: 4px;
+  }
+  
+  .skeleton-text {
+    width: 100%;
+    max-width: 150px; /* Ensure a max-width on smaller screens */
+    height: 20px;
+    margin-top: 10px;
+  }
+  
+  .skeleton-chart {
+    width: 100%;
+    height: 250px;
+    margin-top: 20px;
+  }
+  
+  @keyframes skeleton-loading {
+    0% {
+      background-position: 200% 0;
+    }
+    100% {
+      background-position: -200% 0;
+    }
+  }
+  
+  /* Scrollable chart container */
+  .chart-container {
+    width: 600px;
+    height: 350px; /* Default height */
+    overflow-x: auto; /* Horizontal scrolling */
+    overflow-y: hidden; /* Prevent vertical scrolling */
+    padding-bottom: 15px;
+    box-sizing: border-box; /* Ensure padding is included in width/height calculations */
+  }
+  
+  /* Chart canvas styles */
+  .chart-container canvas {
+    width: 100%; /* Make canvas responsive */
+    height: auto; /* Maintain aspect ratio */
+    min-width: 600px; /* Minimum width for the chart */
+  }
+  
+  /* Responsive behavior for smaller screens */
+  @media (max-width: 768px) {
+    .skeleton-text {
+      width: 80%; /* Adjust skeleton text width for smaller screens */
+    }
+  
+    .skeleton-chart {
+      height: 200px; /* Reduce height of skeleton for tablets */
+    }
+  
+    .chart-container {
+      height: 300px; /* Reduce chart height for tablets */
+    }
+  
+    .chart-container canvas {
+      min-width: 100%; /* Allow canvas to scale down to fit screen */
+    }
+  }
+  
+  /* For very small screens (e.g., mobile phones) */
+  @media (max-width: 480px) {
+    .skeleton-text {
+      width: 70%; /* Adjust width for very small screens */
+    }
+  
+    .skeleton-chart {
+      height: 150px; /* Further reduce height for small mobile devices */
+    }
+  
+    .chart-container {
+      height: 250px; /* Reduce chart height for mobile */
+    }
+  
+    .chart-container canvas {
+      min-width: 100%; /* Ensure canvas is fully responsive on small devices */
+      width: 100% !important; /* Ensure it fully scales down */
+      height: 250px; /* Adjust the height for better mobile display */
+    }
+  }
+  

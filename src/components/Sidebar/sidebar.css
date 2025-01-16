@@ -1,0 +1,92 @@
+/* src/components/Sidebar/Sidebar.css */
+.sidebar-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 998; /* Lower than the sidebar */
+  background-color: rgba(0, 0, 0, 0.221); /* Dark background */
+  display: none;
+}
+
+/* Sidebar styling */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 250px;
+  color: #fff; /* White text for visibility */
+  transition: transform 0.3s ease-in-out;
+  z-index: 999; /* Sidebar above overlay */
+  padding: 20px;
+  transform: translateX(-100%); /* Initially hidden off-screen */
+}
+
+.sidebar.open {
+  transform: translateX(0); /* Move sidebar into view when open */
+}
+
+/* Close button for sidebar */
+.close-button {
+  display: none;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: white;
+  cursor: pointer;
+}
+
+.nav-links {
+  margin-top: 60px;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 12px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  text-align: left;
+  margin-bottom: 10px;
+}
+
+.nav-item:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.icon {
+  margin-right: 10px;
+}
+
+/* Mobile-specific styles */
+@media (max-width: 768px) {
+  .close-button {
+    display: block;
+  }
+
+  .sidebar-overlay {
+    display: block; /* Show overlay when sidebar is open */
+    z-index: 10001;
+  }
+}
+
+@media (min-width: 769px) {
+  .sidebar {
+    position: relative;
+    transform: none; /* Sidebar is always visible on larger screens */
+    /* Higher z-index to ensure it stays above overlay */
+    
+  }
+  
+  .sidebar-overlay {
+    display: none !important; /* Hide overlay on desktop */
+  }
+}

@@ -1,0 +1,40 @@
+/* src/components/Header/Header.css */
+.header {
+  display: flex;
+  align-items: center;
+  height: 64px;
+  padding: 10px 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: sticky; /* Fix the header at the top */
+  top: 0; /* Align to the top */
+  left: 0;
+  right: 0;
+  z-index: 1000; /* Ensures it stays above other content */
+
+}
+
+.menu-button {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  margin-right: 20px;
+}
+
+.logo .radar {
+  width: 50px;
+  height: auto;
+  border-radius: 50%;
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .menu-button {
+      display: block;
+  }
+}
